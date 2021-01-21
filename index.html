@@ -3,7 +3,23 @@
 
 <head>
 	<title>Advanced Chat</title>
-	<meta charset="utf-8"  />
+    <meta charset="utf-8"  />
+    <style>
+        body {
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        }
+        #title {
+            margin-left: auto;
+            margin-right: auto;
+            height: 40px;
+            width: 300px;
+            background-color: darkgreen;
+            text-align: center;
+        }
+        #messageArea {
+            background-color:aqua;
+        }
+    </style>
 </head>
 
 <body>
@@ -11,7 +27,8 @@
     <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-firestore.js"></script>
 
-    <h1>Advanced Chat</h1>
+    <div id="title"><h1>Advanced Chat</h1></div>
+    <h2>How to use the chat: </h2>
     <ul>
         <li>Type any text to send a message, or</li>
         <li>Type /giphy into the message box to send a random gif (e.g. /giphy cat)</li>
@@ -23,11 +40,13 @@
     <input type="text" id="message" placeholder="Hi Morty">
     
     <button id="send">Send</button>
-    
-    <h3>Chat Messages:</h3>
 
-    <div id="messagesContainer">
-        <!-- We will display any messages here that we send/retrieve from Firestore -->
+    <div id="messageArea">
+        <h3>Chat Messages:</h3>
+
+        <div id="messagesContainer">
+            <!-- We will display any messages here that we send/retrieve from Firestore -->
+        </div>
     </div>
 
      <script>
